@@ -1,0 +1,43 @@
+Create a diagram depicting the situation where the user creates a new note using the single page version of the app. 
+
+----
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server->browser: HTML-code
+browser-> server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server->browser: main.css
+browser-> server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+server->browser: spa.js
+
+note over browser:
+browser start executing js-code
+that requests JSON data from the server
+end note
+
+browser-> server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server->browser: [{content:"" , date: "2021-05-23"} // display the save notes in json format]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
+
+note over browser:
+adding notes: after clicking the
+save button it will make 
+a request to a new_note page
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over browser:
+the server render only
+the new_note_spa
+not like in the exercise 0.4
+end note
+
+server->browser: new_note_spa
+
+note over browser:
+new_note_spa includes
+our new note
+end not
