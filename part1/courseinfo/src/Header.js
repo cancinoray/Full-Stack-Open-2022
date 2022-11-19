@@ -1,7 +1,7 @@
-const Header = (props) => {
-  console.log('header',props)
+const Header = ({course}) => {
+  console.log('header',course)
   return(
-    <h1>{ props.course }</h1>
+    <h1>{ course }</h1>
   );
 }
 
