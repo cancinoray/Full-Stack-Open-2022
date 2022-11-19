@@ -1,8 +1,9 @@
 const Part = (prop) => {
+  console.log('parts:', prop)
   return(
     <div>
     <p>
-      { prop.part } { prop.exercises }
+      { prop.parts }
     </p>
     </div>
   );
